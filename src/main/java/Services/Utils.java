@@ -13,6 +13,10 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class Utils {
 
+    /**
+     * This method will get the random number
+     * @return
+     */
     public static String getRandomNumbers() {
         Faker faker = new Faker();
         return faker.random().nextInt(99999) + "";
