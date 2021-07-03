@@ -1,0 +1,17 @@
+{
+  "server": "hub-cloud.browserstack.com",
+  "user": "taeupwork_qSwAs8",
+  "key": "JQCA46mFEp1A6bjRJxQz",
+
+  "capabilities": {
+    "project": "uPET Automation",
+    "build": "SignUp Test",
+    "browserstack.debug": true
+  },
+
+  "environments": {
+    "browser": {
+      "browser": "chrome"
+    }
+  }
+}
