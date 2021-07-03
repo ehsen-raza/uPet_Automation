@@ -4,4 +4,4 @@ Feature: Sign-up and add Image to profile
     Given uPet application is launched
     When A new user is registered
     And Uploaded a profile picture
-    Then Profile picture is updated
+    Then Validate profile picture is updated

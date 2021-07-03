@@ -30,15 +30,6 @@ public class userProfile {
     }
 
     /**
-     * Getting Upload Object
-     *
-     * @return SelenideElement
-     */
-    private SelenideElement uploadPhoto() {
-        return Utils.getSelElement("#uploadPhoto", "default");
-    }
-
-    /**
      * Getting Save button
      *
      * @return SelenideElement
@@ -55,14 +46,6 @@ public class userProfile {
     private SelenideElement dgWaitFor() {
         return $(By.xpath("//div[@role='dialog']")).shouldNotBe(Condition.visible, Duration.ofSeconds(30));
     }
-    /**
-     * Getting Save button
-     *
-     * @return SelenideElement
-     */
-    private SelenideElement msgSuccess() {
-        return Utils.getSelElement("//*[@id='successMessage']/div", "xpath").should(Condition.visible, Duration.ofSeconds(60));
-    }
 
     /**
      * Getting profile image container
@@ -74,10 +57,11 @@ public class userProfile {
     }
 
 //----------------------------------------------------------------------------------------------------------------------
-    /**
+    /*
      * Actions
      */
 //----------------------------------------------------------------------------------------------------------------------
+
     /**
      * This method will help to click on profile image button
      */
@@ -91,7 +75,6 @@ public class userProfile {
      */
     public userProfile uploadImageFile(String path) {
         $("#uploadPhoto").uploadFile(new File(path));
-        //Utils.actionOnElement(uploadPhoto(), "upload", path);
         return this;
     }
 
@@ -112,28 +95,17 @@ public class userProfile {
     }
 
 //----------------------------------------------------------------------------------------------------------------------
-    /**
+    /*
      * Validation
      */
 //----------------------------------------------------------------------------------------------------------------------
-    /**
-     * This method will wait until success message appears
-     */
-    public userProfile waitForDialog() {
-        Utils.actionOnElement(msgSuccess(), "waitForVisibility", null);
-        return this;
-    }
 
     /**
      * This method will validate the image is attached with the profile
      */
-    public userProfile validateProfileImage() {
+    public boolean validateProfileImage() {
         refresh();
-        String expectedValue = "cloudfront.net/imagenes/upet/pets";
-        imgProfileImage().has(Condition.image);
-
-        return this;
+        return imgProfileImage().has(Condition.image);
     }
-
 
 }
