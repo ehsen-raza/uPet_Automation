@@ -63,6 +63,7 @@ public class imageUpload {
 
     @And("Uploaded a profile picture")
     public void profileImageUpload() {
+        System.out.println(System.getProperty("URL"));
         pgHome.clickUserNameLabel();
         pgUserProfile.waitProfileImageButton()
                 .uploadImageFile("src/test/resources/heic-image.HEIC")
